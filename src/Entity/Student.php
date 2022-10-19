@@ -27,6 +27,12 @@ class Student
      */
     private $moyenne;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Classroom::class, inversedBy="students")
+     * @ORM\JoinColumn( referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $classroom;
+
     public function getNce(): ?int
     {
         return $this->Nce;
@@ -62,4 +68,17 @@ class Student
 
         return $this;
     }
+
+    public function getClassroom(): ?Classroom
+    {
+        return $this->classroom;
+    }
+
+    public function setClassroom(?Classroom $classroom): self
+    {
+        $this->classroom = $classroom;
+
+        return $this;
+    }
+
 }

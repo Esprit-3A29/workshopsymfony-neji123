@@ -26,3 +26,4 @@ class ClassroomType extends AbstractType
         ]);
     }
 }
+//how to create a table ?
